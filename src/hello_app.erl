@@ -12,7 +12,10 @@
 start(_StartType, _StartArgs) ->
 	Dispatch = cowboy_router:compile([
         {'_',[
-			{"/", toppage_h, [] }
+			{"/", toppage_h, [] },
+			{"/gfriends", get_friends, []},
+			{"/pfriends",set_friends, []},
+			{"/afriends",add_friends, []}
 		]}
     ]),
 
